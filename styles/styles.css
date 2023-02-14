@@ -17,7 +17,7 @@ html {
     --dark-blue: #191086;
     --purple-gray: #666481;
     --strong-blue: #181E41;
-    --light-blue: rgba(43, 99, 182, 0.9);
+    --light-blue: #2B63B6;
     --white: #FFFFFF;
     --black: #000000;
     --ss: 1rem;
@@ -60,18 +60,6 @@ header > div a {
 header > div a img {
     width: 100%;
 }
-
-/* header > div span {
-    display: block;
-    width: 100%;
-    height: 9rem;
-    height: 3rem;
-    font-weight: 500;
-    font-size: 4rem;
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-} */
 
 header nav {
     display: flex;
@@ -272,23 +260,24 @@ nav #main-menu a {
 .about-me {
     width: 100%;
     min-height: 28rem;
-    /* display: grid;
-    grid-template-columns: 1fr 2fr; */
-    /* background-color: var(--purple-gray); */
-    background: linear-gradient(214.02deg, var(--purple-gray) 6.04%, var(--light-black) 92.95%);
+    background: linear-gradient(214.02deg, var(--white) 6.04%, var(--purple-gray) 92.95%);
     padding: 2rem;
 }
 
 .about-me__title {
-    font-family: 'Playfair Display', serif;
-    color: var(--white);
-    font-size: 3rem;
     display: flex;
     align-items: center;
 }
 
+.about-me__title h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--strong-blue);
+    font-size: 3rem;
+    border-bottom: 0.2rem solid var(--dark-blue);
+}
+
 .about-me__body {
-    color:var(--light-black);
+    color: var(--light-black);
     display: flex;
     align-items: center;
     margin-top: 1rem;
@@ -336,6 +325,10 @@ nav #main-menu a {
     margin-left: 1rem;
 }
 
+.experience-intro__name p span {
+    font-size: var(--sm);
+}
+
 .experience-intro__count p span:first-child {
     font-size: var(--lg);
     font-weight: 700;
@@ -352,7 +345,7 @@ nav #main-menu a {
 }
 
 .experience-intro img {
-    width: 5rem;
+    width: 10rem;
 }
 
 .experience-intro__count {
@@ -392,8 +385,8 @@ nav #main-menu a {
 .experience-details div svg {
     color: var(--white);
     margin-bottom: 1rem;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .experience-details div p {
@@ -465,7 +458,7 @@ footer {
 }
 
 footer h2 span {
-    color: var(--dark-blue);
+    color: var(--light-blue);
 }
 
 form {
@@ -562,6 +555,16 @@ form button {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 2fr;
+    }
+
+    .about-me__body {
+        padding-left: 1rem;
+        border-left: 0.4rem solid var(--strong-blue);
+        border-radius: 0.5rem;
+    }
+
+    .about-me__body p {
+        font-size: var(--md);
     }
 
     .experience {
@@ -679,7 +682,16 @@ form button {
         font-size: var(--lg);
     }
 
+    .social-section a {
+        transition: 0.3s;
+    }
+
+    .social-section a:hover {
+        font-size: 2.3rem
+    }
+
     .about-me {
+        grid-template-columns: 1fr 3fr;
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
@@ -688,7 +700,7 @@ form button {
         font-size: var(--lg);
     }
 
-    .about-me__title{
+    .about-me__title h2 {
         font-size: var(--xlg);
     }
 
@@ -761,6 +773,18 @@ form button {
         height: 4rem;
     }
 
+    form button:hover {
+        cursor: pointer;
+        box-shadow: -1px -1px 5px 1px var(--very-light-gray), 
+                    1px 1px 5px 1px var(--very-light-gray);
+    }
+
+    form button:active {
+        background: var(--white);
+        color: var(--dark-blue);
+        font-weight: 700;
+    }
+
     .social-container {
         gap: 5rem;
     }
@@ -768,12 +792,18 @@ form button {
     .social-container svg {
         width: 3.2rem;
         height: 3.2rem;
+        transition: 0.3s;
+    }
+
+    .social-container svg:hover {
+        width: 3.8rem;
+        height: 3.8rem;
     }
 }
 
 
 /* Efecto de header interactivo */
-
+/* Este código va combinado con código JS */
 .header {
     transition: transform 0.8s;
 }
